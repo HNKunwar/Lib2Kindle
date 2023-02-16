@@ -73,12 +73,20 @@ public class main {
     }
 
     // Print the filtered results
-    Gson gson = new Gson();
     System.out.println("Search Results:");
     for (Map<String, String> result : filteredResults) {
-      System.out.println(gson.toJson(result));
+      String output = String.format(
+          "Title: %s\nAuthor: %s\nYear: %s\nPages: %s\nLanguage: %s\nSize: %s\nLink: %s",
+          result.get("Title"),
+          result.get("Author"),
+          result.get("Year"),
+          result.get("Pages"),
+          result.get("Language"),
+          result.get("Size"),
+          result.get("Mirror_1")
+      );
+      System.out.println(output + "\n");
     }
   }
 }
-
 
